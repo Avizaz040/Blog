@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Blog",
       element: (
         <div>
           <Navbar />,
