@@ -12,7 +12,7 @@ import ToastWithProgressBar from "./Components/ToastNotification";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Blog",
       element: (
         <div>
           <LoginPage />
@@ -20,7 +20,7 @@ function App() {
       )
     },
     {
-      path: "/Home",
+      path: "/Blog/Home",
       element: (
         <div>
           <PrivateRoute>
@@ -31,28 +31,28 @@ function App() {
       ),
     },
     {
-      path: "/login",
+      path: "/Blog/login",
       element: 
       <div>
         <LoginPage />
       </div>,
     },
     {
-      path: "/authorization",
+      path: "/Blog/authorization",
       element: 
       <div>
         <AuthorizationPage />
       </div>
     },
     {
-      path: "/logout",
+      path: "Blog/logout",
       element: 
       <div>
         <LogoutPage />
       </div>
     },
     {
-      path: "/Blog-page",
+      path: "Blog/Blog-page",
       element: 
       <div>
         <PrivateRoute>
