@@ -20,7 +20,7 @@ function App() {
       )
     },
     {
-      path: "/Blog/Home",
+      path: "/Home",
       element: (
         <div>
           <PrivateRoute>
@@ -31,28 +31,28 @@ function App() {
       ),
     },
     {
-      path: "/Blog/login",
+      path: "/login",
       element: 
       <div>
         <LoginPage />
       </div>,
     },
     {
-      path: "/Blog/authorization",
+      path: "/authorization",
       element: 
       <div>
         <AuthorizationPage />
       </div>
     },
     {
-      path: "Blog/logout",
+      path: "/logout",
       element: 
       <div>
         <LogoutPage />
       </div>
     },
     {
-      path: "Blog/Blog-page",
+      path: "/Blog-page",
       element: 
       <div>
         <PrivateRoute>
