@@ -39,10 +39,10 @@ function Navbar() {
         </h1>
         <ul className="h-full flex items-center justify-evenly gap-12 text-[#333333] font-[Inter]">
           <li className="text-center font-medium hover:text-black">
-            <Link to="">Home</Link>
+            <Link to="/Home">Home</Link>
           </li>
           <li className="text-center font-medium hover:text-black">
-            <Link to="">Blog</Link>
+            <Link to="/Blog-page">Blog</Link>
           </li>
           <li className="relative text-center font-medium hover:text-black group">
             <button className="focus:outline-none" onClick={handleExpand}>
@@ -85,6 +85,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="flex items-center gap-6">
+       
         <div className="flex items-center gap-1 cursor-pointer">
           <BiSolidEdit
             style={{ color: "#1068cc", height: "15px", width: "15px" }}
@@ -93,6 +94,7 @@ function Navbar() {
         </div>
         <IoNotifications style={{ fontSize: "1.4rem", color: "#1068cc", cursor: "pointer" }} />
         <CgProfile style={{ fontSize: "2rem", color: "gray", cursor: "pointer" }} />
+        <Link to="/logout" className='font-[500] font-[Inter] text-[#030612] hover:underline underline-offset-4 hover:text-red-600'>Logout</Link>
       </div>
     </div>
   );
