@@ -23,7 +23,7 @@ function LoginPage() {
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
-        navigator("Blog/Home");
+        navigator("/Blog/Home");
       }, 3000);
       
     } else {
