@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import DemoImg from "../assets/Images/demoImg.png";
 import Card from "../Components/Card";
@@ -10,11 +10,11 @@ import SectionHeader from "./SectionHeader";
 
 function FeaturedSection() {
   return (
-    <div className="py-6">
+    <div className="py-6 flex flex-col">
       <SectionHeader SectionName="Featured Blog Post" />
 
-      <div className="flex gap-[32px]">
-        <div className="w-1/2">
+      <div className="flex flex-col lg:flex-row gap-[32px]">
+        <div className="lg:w-1/2">
           <Card2
             Img={DemoImg}
             Icon={<CgProfile style={{ fontSize: "2rem", color: "gray" }} />}
@@ -22,15 +22,15 @@ function FeaturedSection() {
             dateAndYear="Dec 12, 2024"
             topic="Why Minimalism is the Key to Modern Design"
             description="In a cluttered world, less is more. Minimalist design emphasizes clarity, simplicity, and purpose. By stripping away the unnecessary, you allow users to focus on what truly matters. Whether it’s a sleek interface or a clean graphic, minimalism not only looks modern but enhances functionality. Next time you design, ask yourself: “What can I remove to improve this?"
-            height={"540px"}
-            fontSize={"20px"}
+            height={"auto"}
+            fontSize={"clamp(16px, 2vw, 20px)"}
             fontWeight={"500"}
-            topicSize={"44px"}
-            topicHeight={"53px"}
+            topicSize={"clamp(28px, 5vw, 44px)"}
+            topicHeight={"auto"}
           />
         </div>
 
-        <div className="relative w-1/2 flex flex-col gap-8 mb-8">
+        <div className="relative lg:w-1/2 flex flex-col gap-8 mb-8">
           <Card
             img={DemoCardImg}
             name="Sourav Mridha"

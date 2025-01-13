@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { BiSolidEdit } from "react-icons/bi";
@@ -14,18 +14,18 @@ function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  useEffect(() => {
-    if (menuOpen) {
-      // Disable scrolling on body when menu is open
-      document.body.style.overflow = "hidden";
-    } else {
-      // Enable scrolling when menu is closed
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto"; // Cleanup on unmount
-    };
-  }, [menuOpen]);
+  // useEffect(() => {
+  //   if (menuOpen) {
+  //     // Disable scrolling on body when menu is open
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     // Enable scrolling when menu is closed
+  //     document.body.style.overflow = "auto";
+  //   }
+  //   return () => {
+  //     document.body.style.overflow = "auto"; // Cleanup on unmount
+  //   };
+  // }, [menuOpen]);
 
   const handleExpand = () => {
     setIsExpand(!isExpand);
@@ -151,11 +151,11 @@ function Navbar() {
 
       {/* mobile menu */}
       
-      <HiMenuAlt1 className="float-left lg:hidden w-8 h-8 cursor-pointer text-blue-600 z-30" onClick={toggleMenu} />
+      <HiMenuAlt1 className="float-left mt-4 lg:hidden w-8 h-8 cursor-pointer text-blue-600 z-30" onClick={toggleMenu} />
       
-      <div className={`fixed top-0 left-0  transition-transform duration-500 ${
+      <div className={`fixed top-0 left-0 bottom-0  transition-transform duration-500 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
-        } w-[14rem] h-screen bg-gray-300 z-30 py-4 px-4 flex flex-col justify-start gap-8`}>
+        } w-[14rem] min-h-screen bg-gray-300 z-30 py-4 px-4 flex flex-col justify-start gap-8`}>
         {/* User Profile Section */}
         <div className="flex justify-between items-center">
           <CgProfile className="w-12 h-12 text-gray-500" />

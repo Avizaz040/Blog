@@ -1,5 +1,5 @@
-import React from "react";
-import { CgProfile } from "react-icons/cg";
+
+
 function Card2({Img,Icon, name, dateAndYear, topic, description, height, fontSize, fontWeight, topicSize, topicHeight}) {
   return (
     <div className="flex flex-col gap-4">
@@ -17,7 +17,7 @@ function Card2({Img,Icon, name, dateAndYear, topic, description, height, fontSiz
         </p>
       </div>
       <div className="flex flex-col gap-2 text-left">
-        <h4 className="font-[Inter] font-semibold  leading-[53px]" 
+        <h4 className="font-[Inter] font-semibold  lg:leading-[53px]" 
         style={{fontSize: topicSize, lineHeight: topicHeight}}>
           {topic}
         </h4>
