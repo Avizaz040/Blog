@@ -151,7 +151,7 @@ function Navbar() {
 
       {/* mobile menu */}
       
-      <HiMenuAlt1 className="w-8 h-8 cursor-pointer text-blue-600" onClick={toggleMenu} />
+      <HiMenuAlt1 className="lg:hidden w-8 h-8 cursor-pointer text-blue-600" onClick={toggleMenu} />
       
       <div className={`fixed top-0 left-0 bottom-0 transition-transform duration-500 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
@@ -173,7 +173,7 @@ function Navbar() {
             <Link to="/Home">Home</Link>
           </li>
           <li className="font-medium hover:text-blue-600">
-            <Link to="/Blog">Blog</Link>
+            <Link to="/Blog-page">Blog</Link>
           </li>
           <li className="font-medium hover:text-blue-600">
             <Link to="/Categories">Categories</Link>

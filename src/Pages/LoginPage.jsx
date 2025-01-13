@@ -24,6 +24,7 @@ function LoginPage() {
       setTimeout(() => {
         setShowToast(false);
         navigator("/Home");
+        setShowToast(false);
       }, 3000);
       
     } else {

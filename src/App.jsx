@@ -7,7 +7,6 @@ import PrivateRoute from "../src/Private-Route/PrivateRoute";
 import AuthorizationPage from "../src/Components/AuthorizationPage";
 import LogoutPage from "../src/Pages/LogoutPage";
 import BlogPage from "../src/Pages/BlogPage";
-import ToastWithProgressBar from "./Components/ToastNotification";
 
 function App() {
   const router = createBrowserRouter([
@@ -58,7 +57,6 @@ function App() {
         <PrivateRoute>
         <Navbar />
         <BlogPage />
-        <ToastWithProgressBar />
         </PrivateRoute>
       </div>
     }
