@@ -32,7 +32,7 @@ function LoginPage() {
   };
   
   return (
-    <div className="min-h-screen flex justify-center items-center px-auto py-[2rem] lg:py-[5rem] px-[10rem] gap-[5rem] ">
+    <div className="min-h-screen flex justify-center items-center  lg:py-[5rem] lg:px-[10rem] gap-[5rem] ">
       {showToast && <ToastWithProgressBar message="You are successfully logged in..." />}
       <div className="hidden lg:flex w-[50%] flex-col gap-6">
         <h1 className=" text-left text-6xl font-bold text-[#1068cc]  font-[DM]">
@@ -43,7 +43,7 @@ function LoginPage() {
         </p>
       </div>
 
-      <motion.div className="max-h-screen flex flex-col justify-center items-center gap-8 bg-[#1068cc] px-[3rem] lg:px-[5rem] py-[2rem] text-white rounded-2xl shadow-2xl shadow-gray-600"
+      <motion.div className="flex flex-col justify-center items-center gap-8 bg-[#1068cc] px-[3rem] md:px-[4rem] lg:px-[5rem] py-[2rem] text-white rounded-2xl shadow-2xl shadow-gray-600"
       initial={{ x: '100vw' }}
       animate={{ x: 0 }}
       transition={{ type: 'spring', duration: 1 }}
