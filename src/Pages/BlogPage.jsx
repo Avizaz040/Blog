@@ -2,7 +2,7 @@
 
 function BlogPage() {
   return (
-    <div>BlogPage</div>
+    <div className="px-[6rem] text-center pt-8">BlogPage</div>
   )
 }
 

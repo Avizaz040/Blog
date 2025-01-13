@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 
 function Home() {
   return (
-    <div className="px-[6rem] text-center pt-8">
+    <div className="px-[6rem] text-center lg:pt-8">
       <SubscribeSection />
       <FeaturedSection />
       <TrendingPost />

@@ -1,4 +1,4 @@
-import React from "react";
+
 import OfferIcon from "../assets/Icons/OfferIcon.png";
 function SubscribeSection() {
   return (
