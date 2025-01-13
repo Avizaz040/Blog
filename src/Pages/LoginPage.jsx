@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { RiFacebookFill } from "react-icons/ri";
@@ -12,13 +12,13 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigator = useNavigate();
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const { setIsLoggedIn } = useContext(AuthContext);
   const [showToast, setShowToast] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (email === "demoemail@example.com" && password === "1234") {
-      console.log('User logged in');
+      // console.log('User logged in');
       setIsLoggedIn(true);
       setShowToast(true);
       setTimeout(() => {
@@ -32,9 +32,9 @@ function LoginPage() {
   };
   
   return (
-    <div className="flex justify-center items-center px-auto py-[5rem] px-[10rem] gap-[5rem] ">
+    <div className="min-h-screen flex justify-center items-center px-auto py-[2rem] lg:py-[5rem] px-[10rem] gap-[5rem] ">
       {showToast && <ToastWithProgressBar message="You are successfully logged in..." />}
-      <div className="w-[50%] flex flex-col gap-6">
+      <div className="hidden lg:flex w-[50%] flex-col gap-6">
         <h1 className=" text-left text-6xl font-bold text-[#1068cc]  font-[DM]">
           Blogs
         </h1>
@@ -43,7 +43,7 @@ function LoginPage() {
         </p>
       </div>
 
-      <motion.div className="flex flex-col justify-center items-center gap-8 bg-[#1068cc] px-[5rem] py-[2rem] text-white rounded-2xl shadow-2xl shadow-gray-600"
+      <motion.div className="max-h-screen flex flex-col justify-center items-center gap-8 bg-[#1068cc] px-[3rem] lg:px-[5rem] py-[2rem] text-white rounded-2xl shadow-2xl shadow-gray-600"
       initial={{ x: '100vw' }}
       animate={{ x: 0 }}
       transition={{ type: 'spring', duration: 1 }}
@@ -92,7 +92,7 @@ function LoginPage() {
           </div>
         </form>
         <div className="flex flex-col justify-center items-center gap-2">
-          <p className="text-center">Don't have an account?</p>
+          <p className="text-center">Don&apos;t have an account?</p>
           <p className="text-center mb-6">
             <span className="font-bold underline underline-offset-2  cursor-pointer">
               Sign-up
