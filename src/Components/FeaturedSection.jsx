@@ -10,7 +10,7 @@ import SectionHeader from "./SectionHeader";
 
 function FeaturedSection() {
   return (
-    <div className="py-6 flex flex-col">
+    <div className="py-8 lg:py-6 flex flex-col">
       <SectionHeader SectionName="Featured Blog Post" />
 
       <div className="flex flex-col lg:flex-row gap-[32px]">
