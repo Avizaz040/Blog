@@ -130,7 +130,7 @@ function Footer() {
         </div>
         
       </div>
-      <p className="w-full">Copyright © 2023. All rights reserved</p>
+      <p className="w-full">Copyright © 2025. All rights reserved</p>
     </div>
   );
 }
