@@ -7,6 +7,7 @@ import PrivateRoute from "../src/Private-Route/PrivateRoute";
 import AuthorizationPage from "../src/Components/AuthorizationPage";
 import LogoutPage from "../src/Pages/LogoutPage";
 import BlogPage from "../src/Pages/BlogPage";
+import { ThemeProvider } from "./Context-Api/ThemeContext";
 
 function App() {
   const router = createBrowserRouter([
@@ -22,10 +23,12 @@ function App() {
       path: "/Home",
       element: (
         <div>
+          <ThemeProvider>
           <PrivateRoute>
           <Navbar />
           <Home />
           </PrivateRoute>
+          </ThemeProvider>
         </div>
       ),
     },
