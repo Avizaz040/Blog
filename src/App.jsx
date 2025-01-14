@@ -23,7 +23,7 @@ function App() {
       element: (
         <div>
           <PrivateRoute>
-          <Navbar />,
+          <Navbar />
           <Home />
           </PrivateRoute>
         </div>
