@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 
 function Home() {
   return (
-    <div className="min-h-screen px-4 lg:px-[6rem] flex flex-col justify-center items-center lg:pt-8">
+    <div className="min-h-screen  px-4 lg:px-[6rem] flex flex-col justify-center items-center lg:pt-8">
       <SubscribeSection />
       <FeaturedSection />
       <TrendingPost />

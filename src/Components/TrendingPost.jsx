@@ -8,7 +8,7 @@ function TrendingPost() {
     <div className="py-6">
       <SectionHeader 
       SectionName="Trending Blog Post"/>
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-col-1 lg:grid-cols-3 gap-10">
       <Card2 
       Img={DemoImg}
       name="Sourav Mridha"

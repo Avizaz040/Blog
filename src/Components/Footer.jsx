@@ -5,8 +5,8 @@ import { BiLogoPlayStore } from "react-icons/bi";
 
 function Footer() {
   return (
-    <div className="flex flex-col py-4 mb-[5rem]">
-      <div className="flex justify-between mb-[5rem]">
+    <div className="w-full flex flex-col py-4 mb-[5rem]">
+      <div className="flex flex-col lg:flex-row justify-between mb-[5rem]">
         <h5 className="text-[40px] font-[DM] font-semibold text-[#0075FA]">
           Blogs
         </h5>
@@ -46,13 +46,13 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full flex px-8">
-        <div className="w-[80%] grid grid-cols-4 gap-16">
-          <div className="text-left">
+      <div className="w-full flex flex-col lg:flex-row justify-between items-center lg:px-8 gap-4 lg:gap-0">
+        <div className="w-[80%] grid grid-cols-1 lg:grid-cols-4 gap-16">
+          <div className="text-center lg:text-left">
             <h5 className="font-[Inter] text-[19px] font-semibold pb-6">
               Discover
             </h5>
-            <div className="flex flex-col gap-2 font-[Roboto] text-[15px] text-[#333333]">
+            <div className="flex flex-col gap-2 font-[Roboto] lg:text-[15px] text-[#333333]">
               <a href="#">Miami</a>
               <a href="#">New York</a>
               <a href="#">Chicago</a>
@@ -61,21 +61,21 @@ function Footer() {
               <a href="#">San Diego</a>
             </div>
           </div>
-          <div className="text-left">
+          <div className="text-center lg:text-left">
             <h5 className="font-[Inter] text-[19px] font-semibold pb-6">
               Quick Links
             </h5>
             <div className="flex flex-col gap-2 font-[Roboto] text-[15px] text-[#333333]">
               <a href="#">About</a>
               <a href="#">Contact</a>
-              <a href="#">FAQ's</a>
+              <a href="#">FAQ&apos;s</a>
               <a href="#">Blog</a>
               <a href="#">Pricing Plans</a>
               <a href="#">Privacy Policy</a>
               <a href="#">Terms & Conditions</a>
             </div>
           </div>
-          <div className="text-left">
+          <div className="text-center lg:text-left">
             <h5 className="font-[Inter] text-[19px] font-semibold pb-6">
               Discover
             </h5>
@@ -88,7 +88,7 @@ function Footer() {
               <a href="#">San Diego</a>
             </div>
           </div>
-          <div className="text-left">
+          <div className="text-center lg:text-left">
             <h5 className="font-[Inter] text-[19px] font-semibold pb-6">
               Quick Links
             </h5>
@@ -103,7 +103,7 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="w-[20%] flex flex-col items-end justify-center gap-2">
+        <div className=" lg:w-[20%] flex flex-col items-center lg:items-end justify-center gap-2">
           <p className="font-[Inter] font-bold text-[19px]">Get the app</p>
           <div className="w-[213px] flex items-center justify-center gap-4 py-4 bg-[#1067CB] text-white rounded-[12px] px-4 cursor-pointer mb-2">
             <div className="w-1/4 border-r-[1px] border-white">
