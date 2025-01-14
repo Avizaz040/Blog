@@ -5,9 +5,9 @@ import { BiLogoPlayStore } from "react-icons/bi";
 
 function Footer() {
   return (
-    <div className="w-full flex flex-col py-4 mb-[5rem]">
-      <div className="flex flex-col lg:flex-row justify-between mb-[5rem]">
-        <h5 className="text-[40px] font-[DM] font-semibold text-[#0075FA]">
+    <div className="w-full flex flex-col py-4 gap-10 text-center">
+      <div className="flex flex-col lg:flex-row justify-between">
+        <h5 className="text-left text-[40px] font-[DM] font-semibold text-[#0075FA]">
           Blogs
         </h5>
         <div className="flex items-center gap-4">
@@ -130,6 +130,7 @@ function Footer() {
         </div>
         
       </div>
+      <p className="w-full">Copyright © 2023. All rights reserved</p>
     </div>
   );
 }
