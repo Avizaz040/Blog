@@ -57,10 +57,12 @@ function App() {
       path: "/Blog-page",
       element: 
       <div>
+        <ThemeProvider>
         <PrivateRoute>
         <Navbar />
         <BlogPage />
         </PrivateRoute>
+        </ThemeProvider>
       </div>
     }
   ]);

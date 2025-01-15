@@ -52,7 +52,7 @@ function FooterMenu() {
             <div className={`flex flex-col gap-2 font-[Roboto] lg:text-[15px] ${ theme === "dark" ? "text-white/50" : "text-[#333333]" }`}>
               <a href="#">About</a>
               <a href="#">Contact</a>
-              <a href="#">FAQ's</a>
+              <a href="#">FAQ&apos;s</a>
               <a href="#">Blog</a>
               <a href="#">Pricing Plans</a>
               <a href="#">Privacy Policy</a>
