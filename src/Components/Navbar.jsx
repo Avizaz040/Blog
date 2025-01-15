@@ -176,7 +176,7 @@ function Navbar() {
         className="fixed top-4 lg:hidden w-8 h-8 cursor-pointer text-blue-600 z-30"
         onClick={toggleMenu}
       />
-      <div className="fixed top-4 right-4 w-8 h-8 cursor-pointer z-30" onClick={toggleTheme}>
+      <div className="lg:hidden fixed top-4 right-4 w-8 h-8 cursor-pointer z-30" onClick={toggleTheme}>
             {theme === "dark" ? (
               <MdOutlineNightlightRound className="w-full h-full text-blue-600" />
             ) : (

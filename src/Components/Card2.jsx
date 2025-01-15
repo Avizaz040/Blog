@@ -1,6 +1,8 @@
-
+import { useContext } from "react";
+import { ThemeContext } from "../Context-Api/ThemeContext";
 
 function Card2({Img,Icon, name, dateAndYear, topic, description, height, fontSize, fontWeight, topicSize, topicHeight}) {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className="flex flex-col gap-4">
       <img
@@ -11,7 +13,7 @@ function Card2({Img,Icon, name, dateAndYear, topic, description, height, fontSiz
       />
       <div className="flex gap-2">
         <div>{Icon}</div>
-        <p className="font-[Inter] text-left text-[#171717]"
+        <p className={`font-[Inter] text-left  ${ theme === "dark" ? "text-white" : "text-[#171717]" }`}
         style={{fontSize: fontSize, fontWeight: fontWeight}}>
           {name} <span>|</span> {dateAndYear}
         </p>
@@ -21,7 +23,7 @@ function Card2({Img,Icon, name, dateAndYear, topic, description, height, fontSiz
         style={{fontSize: topicSize, lineHeight: topicHeight}}>
           {topic}
         </h4>
-        <p className="leading-[27px] text-[#171717] font-[Poppins] font-normal text-[18px] opacity-[60%]">
+        <p className={`leading-[27px] font-[Poppins] font-normal text-[18px] opacity-[60%] ${ theme === "dark" ? "text-white" : "text-[#171717]" }`}>
          {description}
         </p>
       </div>

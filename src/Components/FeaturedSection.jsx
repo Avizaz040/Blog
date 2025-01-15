@@ -1,4 +1,4 @@
-
+import {useContext} from 'react'
 import { motion } from "framer-motion";
 import DemoImg from "../assets/Images/demoImg.png";
 import Card from "../Components/Card";
@@ -7,10 +7,12 @@ import { SlArrowDown } from "react-icons/sl";
 import Card2 from "./Card2";
 import { CgProfile } from "react-icons/cg";
 import SectionHeader from "./SectionHeader";
+import { ThemeContext } from "../Context-Api/ThemeContext";
 
 function FeaturedSection() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="py-8 lg:py-6 flex flex-col">
+    <div className={`py-8 lg:py-6 flex flex-col ${ theme === "dark" ? "text-white" : "text-black" }`}>
       <SectionHeader SectionName="Featured Blog Post" />
 
       <div className="flex flex-col lg:flex-row gap-[32px]">
@@ -59,19 +61,12 @@ function FeaturedSection() {
             topic="5-Minute Morning Routine to Boost Productivity"
             description="In today’s fast-paced world, staying ahead means constantly learning and adapting.In today’s fast-paced world."
           />
-          <div className="absolute w-full h-[13rem] flex justify-center items-center bg-gradient-to-b from-white/10 from-5% via-white/90 to-white to-90%  bottom-0">
+          <div className={`absolute w-full h-[13rem] flex justify-center items-center bottom-0 ${ theme === "dark" ? "bg-gradient-to-b from-gray-800/10 from-5% via-gray-800/90 to-gray-800 to-90%" : "bg-gradient-to-b from-white/10 from-5% via-white/90 to-white to-90%" }`}>
             <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1 }}
             >
-              <SlArrowDown
-                style={{
-                  color: "blue",
-                  fontSize: "3rem",
-                  cursor: "pointer",
-                  fontWeight: "5px",
-                }}
-              />
+              <SlArrowDown className={`text-[3rem] font-[5px] cursor-pointer ${ theme === "dark" ? "text-white" : "text-blue-600" }`}/>
             </motion.div>
           </div>
         </div>

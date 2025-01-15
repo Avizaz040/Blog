@@ -1,12 +1,14 @@
-import React from "react";
+import {useContext} from "react";
+import { ThemeContext } from "../Context-Api/ThemeContext";
 
 function NewsletterReminder() {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className="w-full py-8">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-[20px] py-10">
         <div className="flex flex-col justify-center items-start gap-2 ">
           <h1 className="text-[20px] lg:text-3xl font-bold font-[DM]">Newsletter Reminder</h1>
-          <p className="font-[Poppins] text-[#666666]">
+          <p className={`font-[Poppins] ${ theme === "dark" ? "text-white" : "text-[#666666]" }`}>
             Subscribe today and get exclusive access to premium content!
           </p>
         </div>
@@ -14,14 +16,14 @@ function NewsletterReminder() {
           <input
             type="text"
             placeholder="Enter your e-mail to subscribe"
-            className="w-4/5 lg:w-2/3 font-[Inter] font-[400] outline-none placeholder:text-[16px] text-center"
+            className={`w-4/5 lg:w-2/3 font-[Inter] font-[400] outline-none placeholder:text-[16px] text-center lg:text-left ${ theme === "dark" ? "text-white bg-gray-800" : "text-black bg-white"}`}
           />
-          <button className="py-[10px] px-[42px] lg:py-[18px] lg:px-[54px] rounded-[13px] bg-[#1067CB] text-white font-[Inter] text-[16px] lg:text-[20px] lg:leading-[18px]">
+          <button className="py-[10px] px-[42px] lg:py-[24px] lg:px-[54px] rounded-[13px] bg-[#1067CB] text-white font-[Inter] text-[16px] lg:text-[20px] lg:leading-[18px]">
             Subscribe
           </button>
         </div>
       </div>
-      <div className="w-[85%] h-[1px] bg-[#0075FA] opacity-[40%] my-12 mx-auto "></div>
+      <div className={`w-[85%] h-[1px] opacity-[40%] my-12 mx-auto ${ theme === "dark" ? "bg-white" : "bg-[#0075FA]" }`}></div>
     </div>
   );
 }
