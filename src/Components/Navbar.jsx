@@ -8,12 +8,14 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { LuSun } from "react-icons/lu";
 import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 import { MdOutlineNightlightRound } from "react-icons/md";
 
 function Navbar() {
   const [isExpand, setIsExpand] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
+  const {showWriteBlogs, setShowWriteBlogs} = useContext(AuthContext);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -25,6 +27,10 @@ function Navbar() {
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const handleShowWriteBlogs = () => {
+    setShowWriteBlogs(!showWriteBlogs);
   };
 
   const submenuVariants = {
@@ -49,7 +55,7 @@ function Navbar() {
     visible: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -10 },
   };
-
+  
   return (
     <div
       className={`lg:h-[6rem] flex justify-between items-center px-[1rem] lg:px-[6rem] ${
@@ -139,7 +145,7 @@ function Navbar() {
           />
           <p
             className={`underline underline-offset-4 font-[500] font-[Inter] `}
-          >
+          onClick={handleShowWriteBlogs}>
             Write Blogs
           </p>
         </div>
@@ -223,9 +229,9 @@ function Navbar() {
 
         {/* Additional Options */}
         <div className="flex flex-col font-semibold font-[Inter]  text-lg gap-4">
-          <Link to="/write-blogs" className="hover:text-blue-600">
+          <p className="hover:text-blue-600" onClick={handleShowWriteBlogs}>
             Write Blogs
-          </Link>
+          </p>
           <Link to="/logout" className="hover:text-blue-600">
             Logout
           </Link>

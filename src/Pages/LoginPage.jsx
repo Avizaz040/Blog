@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { RiFacebookFill } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa6";
@@ -95,10 +95,8 @@ function LoginPage() {
         <div className="flex flex-col justify-center items-center gap-2">
           <p className="text-center">Don&apos;t have an account?</p>
           <p className="text-center mb-6">
-            <span className="font-bold underline underline-offset-2  cursor-pointer">
-              Sign-up
-            </span>{" "}
-            now
+            <Link to={"/signup"} className="font-bold underline underline-offset-2  cursor-pointer">Sign-up</Link>
+            &nbsp;now
           </p>
           <p className="mb-2">Or Sign up with</p>
           <div className="flex gap-4">

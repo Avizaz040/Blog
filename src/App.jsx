@@ -1,4 +1,3 @@
-
 import Navbar from "../src/Components/Navbar";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../src/Pages/Home";
@@ -8,6 +7,8 @@ import AuthorizationPage from "../src/Components/AuthorizationPage";
 import LogoutPage from "../src/Pages/LogoutPage";
 import BlogPage from "../src/Pages/BlogPage";
 import { ThemeProvider } from "./Context-Api/ThemeContext";
+import SignUpPage from "../src/Pages/SignUpPage";
+import WriteBlogSection from "../src/Pages/WriteBlogSection";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,58 +18,65 @@ function App() {
         <div>
           <LoginPage />
         </div>
-      )
+      ),
     },
     {
       path: "/Home",
       element: (
         <div>
-          <ThemeProvider>
           <PrivateRoute>
-          <Navbar />
-          <Home />
+            <Navbar />
+            <Home />
+            <WriteBlogSection />
           </PrivateRoute>
-          </ThemeProvider>
         </div>
       ),
     },
     {
       path: "/login",
-      element: 
-      <div>
-        <LoginPage />
-      </div>,
+      element: (
+        <div>
+          <LoginPage />
+        </div>
+      ),
     },
     {
       path: "/authorization",
-      element: 
-      <div>
-        <AuthorizationPage />
-      </div>
+      element: (
+        <div>
+          <AuthorizationPage />
+        </div>
+      ),
     },
     {
       path: "/logout",
-      element: 
-      <div>
-        <LogoutPage />
-      </div>
+      element: (
+        <div>
+          <LogoutPage />
+        </div>
+      ),
     },
     {
       path: "/Blog-page",
-      element: 
-      <div>
-        <ThemeProvider>
-        <PrivateRoute>
-        <Navbar />
-        <BlogPage />
-        </PrivateRoute>
-        </ThemeProvider>
-      </div>
-    }
+      element: (
+        <div>
+          <PrivateRoute>
+            <Navbar />
+            <BlogPage />
+          </PrivateRoute>
+        </div>
+      ),
+    },
+    {
+      path: "/signup",
+      element: <SignUpPage />,
+    },
   ]);
   return (
     <div>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </div>
   );
 }
