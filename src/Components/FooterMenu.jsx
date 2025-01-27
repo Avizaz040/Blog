@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 
 function FooterMenu() {
- const {theme} = useContext(ThemeContext);
+ const {theme} = useContext(AuthContext);
   return (
     <div className="w-[80%] grid grid-cols-1 lg:grid-cols-4 gap-16">
           <div className="text-center lg:text-left">

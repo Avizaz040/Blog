@@ -1,8 +1,8 @@
 import {useContext} from "react";
-import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 
 function NewsletterReminder() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(AuthContext);
   return (
     <div className="w-full py-8">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-[20px] py-10">

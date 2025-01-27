@@ -5,12 +5,12 @@ import TrendingPost from "../Components/TrendingPost";
 import Catagories from "../Components/Catagories";
 import NewsletterReminder from "../Components/NewsletterReminder";
 import Footer from "../Components/Footer";
-import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 
 
 
 function Home() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(AuthContext);
   
   return (
     <div

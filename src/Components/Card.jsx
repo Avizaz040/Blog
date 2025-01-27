@@ -1,8 +1,8 @@
 import {useContext} from 'react'
-import { ThemeContext } from '../Context-Api/ThemeContext';
+import { AuthContext } from '../Context-Api/AuthContext';
 
 function Card({img, name, dateAndYear, topic, description}) {
-  const {theme} = useContext(ThemeContext);
+  const {theme} = useContext(AuthContext);
   return (
     <div className='flex flex-col lg:flex-row items-center lg:gap-[20px]'>
       <img src={img} alt="image" className='lg:w-1/2 h-[180px] lg:h-[222px] rounded-[16px]' />

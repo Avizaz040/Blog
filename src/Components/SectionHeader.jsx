@@ -1,9 +1,9 @@
 import {useContext} from 'react'
 import { GoArrowRight } from "react-icons/go";
-import { ThemeContext } from '../Context-Api/ThemeContext';
+import { AuthContext } from '../Context-Api/AuthContext';
 
 function SectionHeader({SectionName}) {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(AuthContext);
   return (
     
       <div className="flex justify-between py-[40px]">

@@ -6,7 +6,7 @@ import PrivateRoute from "../src/Private-Route/PrivateRoute";
 import AuthorizationPage from "../src/Components/AuthorizationPage";
 import LogoutPage from "../src/Pages/LogoutPage";
 import BlogPage from "../src/Pages/BlogPage";
-import { ThemeProvider } from "./Context-Api/ThemeContext";
+import { AuthProvider } from "./Context-Api/AuthContext";
 import SignUpPage from "../src/Pages/SignUpPage";
 import WriteBlogSection from "../src/Pages/WriteBlogSection";
 
@@ -74,9 +74,9 @@ function App() {
   ]);
   return (
     <div>
-      <ThemeProvider>
+      <AuthProvider>
         <RouterProvider router={router} />
-      </ThemeProvider>
+      </AuthProvider>
     </div>
   );
 }

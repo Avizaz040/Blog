@@ -7,10 +7,10 @@ import { SlArrowDown } from "react-icons/sl";
 import Card2 from "./Card2";
 import { CgProfile } from "react-icons/cg";
 import SectionHeader from "./SectionHeader";
-import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 
 function FeaturedSection() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(AuthContext);
   return (
     <div className={`py-8 lg:py-6 flex flex-col ${ theme === "dark" ? "text-white" : "text-black" }`}>
       <SectionHeader SectionName="Featured Blog Post" />

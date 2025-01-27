@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import OfferIcon from "../assets/Icons/OfferIcon.png";
-import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 function SubscribeSection() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(AuthContext);
   return (
     <>
     <themeProvider>

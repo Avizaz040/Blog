@@ -7,14 +7,13 @@ import { CgProfile } from "react-icons/cg";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { LuSun } from "react-icons/lu";
-import { ThemeContext } from "../Context-Api/ThemeContext";
 import { AuthContext } from "../Context-Api/AuthContext";
 import { MdOutlineNightlightRound } from "react-icons/md";
 
 function Navbar() {
   const [isExpand, setIsExpand] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(AuthContext);
   const {showWriteBlogs, setShowWriteBlogs} = useContext(AuthContext);
 
   const toggleMenu = () => {
@@ -67,13 +66,13 @@ function Navbar() {
           Blogs
         </h1>
         <ul className="h-full flex items-center justify-evenly gap-12 font-[Inter]">
-          <li className="text-center font-medium hover:text-black">
+          <li className={`text-center font-medium ${ theme === "dark" ? "hover:text-blue-500" : "hover:text-black" } `}>
             <Link to="/Home">Home</Link>
           </li>
-          <li className="text-center font-medium hover:text-black">
+          <li className={`text-center font-medium ${ theme === "dark" ? "hover:text-blue-500" : "hover:text-black" } `}>
             <Link to="/Blog-page">Blog</Link>
           </li>
-          <li className="relative text-center font-medium hover:text-black group">
+          <li className={`relative text-center font-medium ${ theme === "dark" ? "hover:text-blue-500" : "hover:text-black" } group`}>
             <button className="focus:outline-none" onClick={handleExpand}>
               Categories
             </button>
@@ -126,7 +125,7 @@ function Navbar() {
               )}
             </AnimatePresence>
           </li>
-          <li className="text-center font-medium hover:text-black">
+          <li className={`text-center font-medium hover:text-black ${ theme === "dark" ? "hover:text-blue-500" : "hover:text-black" } `}>
             <Link to="">Contact</Link>
           </li>
         </ul>

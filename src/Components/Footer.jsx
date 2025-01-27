@@ -2,12 +2,12 @@ import {useContext} from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoLogoApple } from "react-icons/io";
 import { BiLogoPlayStore } from "react-icons/bi";
-import { ThemeContext } from "../Context-Api/ThemeContext";
+import { AuthContext } from "../Context-Api/AuthContext";
 import FooterMenu from "./FooterMenu"
 
 function Footer() {
  
-  const {theme} = useContext(ThemeContext);
+  const {theme} = useContext(AuthContext);
   return (
     <div className="w-full flex flex-col py-4 gap-10 text-center">
       <div className="flex flex-col lg:flex-row justify-between items-center gap-4 ">
