@@ -5,7 +5,7 @@ import TechImg from "../assets/Images/Tech and Innovation.png";
 import DesignImg from "../assets/Images/Design and creativity.png";
 import LifestyleImg from "../assets/Images/Wellness and Lifestyle.png";
 import BussinessImg from "../assets/Images/Business and finance.png";
-import TravelImg from "../assets/Images/Travel and Adventure.png";
+import TravelImg from "../assets/Images/Travel and adventure.png";
 import EducationImg from "../assets/Images/Education and Learning.png";
 function Catagories() {
   return (
