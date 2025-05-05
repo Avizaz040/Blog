@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: "https://blog-5ipy.onrender.com",
+    origin: "https://blog-frontend-h6p1.onrender.com",
     credentials: true,
 }));
 app.use(cookieParser());
