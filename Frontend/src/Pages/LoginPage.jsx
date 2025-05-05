@@ -18,7 +18,7 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://blog-5ipy.onrender.com", {
+      const response = await fetch("https://blog-5ipy.onrender.com/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
