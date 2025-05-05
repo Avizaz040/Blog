@@ -2,7 +2,7 @@ import React from "react";
 import SectionHeader from "./SectionHeader";
 import CatagoriesCard from "../Components/CatatoriesCard";
 import TechImg from "../assets/Images/Tech and Innovation.png";
-import DesignImg from "../assets/Images/Design and Creativity.png";
+import DesignImg from "../assets/Images/Design and creativity.png";
 import LifestyleImg from "../assets/Images/Wellness and Lifestyle.png";
 import BussinessImg from "../assets/Images/Business and finance.png";
 import TravelImg from "../assets/Images/Travel and Adventure.png";
