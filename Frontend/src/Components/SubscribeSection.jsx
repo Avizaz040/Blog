@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import OfferIcon from "../assets/Icons/OfferIcon.png";
+import OfferIcon from "../assets/Icons/offerIcon.png";
 import { AuthContext } from "../Context-Api/AuthContext";
 function SubscribeSection() {
   const { theme } = useContext(AuthContext);
