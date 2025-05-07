@@ -5,7 +5,7 @@ function SubscribeSection() {
   const { theme } = useContext(AuthContext);
   return (
     <>
-    <themeProvider>
+    
       <div className={`flex flex-col justify-center items-center gap-[16px] lg:py-6 ${ theme === "dark" ? "text-white bg-gray-800" : "text-black bg-white"}`}>
         <div className="flex justify-center items-center gap-2">
           <img
@@ -31,7 +31,7 @@ function SubscribeSection() {
           </button>
         </div>
       </div>
-      </themeProvider>
+      
     </>
   );
 }

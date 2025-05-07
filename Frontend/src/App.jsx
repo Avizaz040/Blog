@@ -9,19 +9,31 @@ import BlogPage from "../src/Pages/BlogPage";
 import { AuthProvider } from "./Context-Api/AuthContext";
 import SignUpPage from "../src/Pages/SignUpPage";
 import WriteBlogSection from "../src/Pages/WriteBlogSection";
+import Layout from "../src/Components/Layout";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <div>
-          
-            <Navbar />
-            <Home />
-          
-        </div>
-      ),
+      element: 
+      <Layout />,
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+        {
+          path: "/Blog-page",
+          element: (
+            <div>
+              <PrivateRoute>
+                <BlogPage />
+                <WriteBlogSection />
+              </PrivateRoute>
+            </div>
+          ),
+        },
+      ],
     },
     {
       path: "/login",
@@ -44,18 +56,6 @@ function App() {
       element: (
         <div>
           <LogoutPage />
-        </div>
-      ),
-    },
-    {
-      path: "/Blog-page",
-      element: (
-        <div>
-          <PrivateRoute>
-            <Navbar />
-            <BlogPage />
-            <WriteBlogSection />
-          </PrivateRoute>
         </div>
       ),
     },

@@ -1,6 +1,4 @@
 
-
-
 function TimeAndDate() {
 const today = new Date();
 const getDay = (date) => {

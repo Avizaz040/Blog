@@ -9,10 +9,21 @@ const mongoose = require('mongoose'); // no need to use `.default`
 const app = express();
 app.use(express.json());
 
-app.use(cors({
-    origin: "http://localhost:5173",
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://blogify-frontend.vercel.app",
+];
+const corsOptions = {
+    origin: allowedOrigins,
     credentials: true,
-}));
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+};
+app.use(cors(corsOptions));
+// app.use(cors({
+//     origin: "http://localhost:5173",
+//     credentials: true,
+// }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 

@@ -8,16 +8,19 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { RiCloseLargeFill } from "react-icons/ri";
 import { LuSun } from "react-icons/lu";
 import { AuthContext } from "../Context-Api/AuthContext";
+import Logout from "./Logout";
 import { MdOutlineNightlightRound } from "react-icons/md";
 import TimeAndDate from "./TimeAndDate";
+
+// import { LogOut } from "lucide-react";
 
 function Navbar() {
   const [isExpand, setIsExpand] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, setTheme } = useContext(AuthContext);
-  const { showWriteBlogs, setShowWriteBlogs, isLoggedIn } =
+  const { showWriteBlogs, setShowWriteBlogs, isLoggedIn, user } =
     useContext(AuthContext);
-
+  console.log("isLoggedIn:", isLoggedIn);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -70,12 +73,12 @@ function Navbar() {
         <ul className="h-full flex items-center justify-evenly gap-12 font-[Inter]">
           <li
             className={`relative text-center font-medium group ${
-              theme === "dark"
-                ? "hover:text-blue-500 "
-                : "hover:text-black "
+              theme === "dark" ? "hover:text-blue-500 " : "hover:text-black "
             } `}
           >
-            <Link to="/" className={`relative z-10 
+            <Link
+              to="/"
+              className={`relative z-10 
                           after:content-[''] 
                           after:absolute 
                           after:left-0 
@@ -85,17 +88,20 @@ function Navbar() {
                           after:bg-current 
                           after:transition-all 
                           after:duration-300 
-                          group-hover:after:w-full`}>Home</Link>
+                          group-hover:after:w-full`}
+            >
+              Home
+            </Link>
           </li>
           <li
             className={`relative text-center font-medium group
                ${
-              theme === "dark"
-                ? "hover:text-blue-500 "
-                : "hover:text-black "
-            } `}
+                 theme === "dark" ? "hover:text-blue-500 " : "hover:text-black "
+               } `}
           >
-            <Link to="/Blog-page" className={`relative z-10 
+            <Link
+              to="/Blog-page"
+              className={`relative z-10 
                           after:content-[''] 
                           after:absolute 
                           after:left-0 
@@ -105,13 +111,14 @@ function Navbar() {
                           after:bg-current 
                           after:transition-all 
                           after:duration-300 
-                          group-hover:after:w-full`}>Blog</Link>
+                          group-hover:after:w-full`}
+            >
+              Blog
+            </Link>
           </li>
           <li
             className={`relative text-center font-medium group ${
-              theme === "dark"
-                ? "hover:text-blue-500 "
-                : "hover:text-black "
+              theme === "dark" ? "hover:text-blue-500 " : "hover:text-black "
             }`}
             onMouseEnter={() => setIsExpand(true)}
             onMouseLeave={() => setIsExpand(false)}
@@ -185,7 +192,9 @@ function Navbar() {
               theme === "dark" ? "hover:text-blue-500" : "hover:text-black"
             } `}
           >
-            <Link to="" className={`relative z-10 
+            <Link
+              to=""
+              className={`relative z-10 
                           after:content-[''] 
                           after:absolute 
                           after:left-0 
@@ -195,7 +204,10 @@ function Navbar() {
                           after:bg-current 
                           after:transition-all 
                           after:duration-300 
-                          group-hover:after:w-full`}>Contact</Link>
+                          group-hover:after:w-full`}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
@@ -226,36 +238,67 @@ function Navbar() {
                   Write Blogs
                 </p>
               </div>
-
               <IoNotifications
                 className={`text-[#1068cc] cursor-pointer text-[1.4rem] ${
                   theme === "dark" ? "text-white" : "text-[#030612]"
                 }`}
               />
-              <CgProfile
+              {/* <CgProfile
                 className={`text-gray-500 cursor-pointer text-[2rem] ${
                   theme === "dark" ? "text-white" : "text-[#030612]"
                 }`}
-              />
-              <Link
+              /> */}
+              {/* <Link
                 to="/logout"
                 className={`font-[500] font-[Inter] ${
                   theme === "dark" ? "text-white" : "text-[#030612]"
                 } hover:underline underline-offset-4 hover:text-red-600"`}
               >
                 Logout
+              </Link> */}
+              {/* {isLoggedIn ? <Logout/> : (
+              <Link
+                to="/login"
+                className={`font-[500] font-[Inter] ${
+                  theme === "dark" ? "text-white" : "text-[#030612]"
+                } hover:underline underline-offset-4 hover:text-red-600`}
+              >
+                Login
               </Link>
+              )} */}
+              {isLoggedIn && (
+                <div className="flex items-center gap-2 border-b-2 cursor-pointer">
+                  <CgProfile
+                    className={`text-gray-500 cursor-pointer text-[2rem] ${
+                      theme === "dark" ? "text-white" : "text-[#030612]"
+                    }`}
+                  />
+                  <p className="font-[500] font-[Inter] text-blue -600">
+                    {user?.firstName} {user?.lastName}
+                  </p>
+                  <Link
+                    to="/logout"
+                    className={`font-[500] font-[Inter] ${
+                      theme === "dark" ? "text-white" : "text-[#030612]"
+                    } hover:underline underline-offset-4 hover:text-red-600"`}
+                  >
+                    Logout
+                  </Link>
+                </div>
+              )}
             </div>
           )}
           {!isLoggedIn && (
-            <Link
-              to="/login"
-              className={`font-[500] font-[Inter] ${
-                theme === "dark" ? "text-white" : "text-[#030612]"
-              } hover:underline underline-offset-4 hover:text-red-600`}
-            >
-              Login
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                to="/login"
+                className={`font-[500] font-[Inter] ${
+                  theme === "dark" ? "text-white" : "text-[#030612]"
+                } hover:underline underline-offset-4 hover:text-red-600`}
+              >
+                Login
+              </Link>
+            </div>
           )}
         </div>
 

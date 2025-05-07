@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
-export default function ToastWithProgressBar({ message = "You are successfully logged in!", autoClose = 3000 }) {
+export default function ToastWithProgressBar({ message , autoClose }) {
 
   const [visible, setVisible] = useState(true);
   const [progress, setProgress] = useState(0);
+
+  ToastWithProgressBar.propTypes = {
+    message: PropTypes.string,
+    autoClose: PropTypes.number.isRequired,
+  };
+  
+  ToastWithProgressBar.defaultProps = {
+    message: "You are successfully logged in!",
+    autoClose: 3000,
+  };
+  
 
   useEffect(() => {
     let interval, timeout;

@@ -10,6 +10,7 @@ function WriteBlogSection() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [coverImage, setCoverImage] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false); // ✅ Loading state
 
   const handleShowWriteBlogs = () => {
     setShowWriteBlogs(!showWriteBlogs);
@@ -34,6 +35,8 @@ function WriteBlogSection() {
       alert("All fields are required!");
       return;
     }
+
+    setIsSubmitting(true); // ✅ Start loading
 
     try {
       const formData = new FormData();
@@ -66,13 +69,12 @@ function WriteBlogSection() {
       console.error("Error posting blog:", error);
       alert("Server error. Try again later.");
     }
+    finally {
+      setIsSubmitting(false); // ✅ Stop loading
+    }
   };
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  
 
-  // Inside handlePublish
-  setIsSubmitting(true);
-  // After all logic
-  setIsSubmitting(false);
 
   return (
     <AnimatePresence>

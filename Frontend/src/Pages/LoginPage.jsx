@@ -6,53 +6,65 @@ import { FaGithub } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { AuthContext } from "../Context-Api/AuthContext";
 import ToastWithProgressBar from "../Components/ToastNotification";
+import checkAPI from "../Utils/Api"; // Assuming you have a utility function for API calls
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigator = useNavigate();
-  const { setIsLoggedIn } = useContext(AuthContext);
+  const { setIsLoggedIn, isLoggedIn, setUser } =
+    useContext(AuthContext);
   const [showToast, setShowToast] = useState(false);
+
+  // console.log("API", checkAPI());
+  // Function to handle login
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/auth/login", {
+      const response = await checkAPI("/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           email,
-          password
+          password,
         }),
-        credentials: "include",
       });
       const data = await response.json();
       console.log(response, data);
       if (response.ok) {
-        setIsLoggedIn(true);
-        setShowToast(true);
-        setTimeout(() => {
-          setShowToast(false);
-          navigator("/");
-        }, 3000);
+        setTimeout(async () => {
+          localStorage.setItem("user", JSON.stringify(data.user));
+          setUser(data.user);
+          setIsLoggedIn(true);
+          setShowToast(true);
+          setTimeout(() => {
+            setShowToast(false);
+            navigator("/");
+          }, 3000);
+        }, 1000);
       } else {
         setError(data?.message || "Invalid email or password");
       }
     } catch (error) {
-      setError(error.message || "Something went wrong. Please try again later.");
+      setError(
+        error.message || "Something went wrong. Please try again later."
+      );
       console.log(error);
     }
-
-    
   };
+  console.log("Logged in", isLoggedIn);
 
   return (
     <div className="min-h-screen flex justify-center items-center  lg:py-[5rem] lg:px-[10rem] gap-[5rem] ">
       {showToast && (
-        <ToastWithProgressBar message="You are successfully logged in..." />
+        <ToastWithProgressBar
+          message="You are successfully logged in..."
+          autoClose={3000}
+        />
       )}
       <div className="hidden lg:flex w-[50%] flex-col gap-6">
         <h1 className=" text-left text-6xl font-bold text-[#1068cc]  font-[DM]">
