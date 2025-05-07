@@ -11,7 +11,7 @@ app.use(express.json());
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://blogify-frontend.vercel.app",
+    "https://blog-frontend-h6p1.onrender.com",
 ];
 const corsOptions = {
     origin: allowedOrigins,
