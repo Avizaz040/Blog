@@ -23,7 +23,7 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await checkAPI("/auth/login", {
+      const {ok, data} = await checkAPI("/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,9 +33,9 @@ function LoginPage() {
           password,
         }),
       });
-      const data = await response.json();
-      console.log(response, data);
-      if (response.ok) {
+      // const data = await response.json();
+      // console.log(response, data);
+      if (ok) {
         setTimeout(async () => {
           localStorage.setItem("user", JSON.stringify(data.user));
           setUser(data.user);

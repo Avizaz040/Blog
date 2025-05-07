@@ -276,14 +276,7 @@ function Navbar() {
                   <p className="font-[500] font-[Inter] text-blue -600">
                     {user?.firstName} {user?.lastName}
                   </p>
-                  <Link
-                    to="/logout"
-                    className={`font-[500] font-[Inter] ${
-                      theme === "dark" ? "text-white" : "text-[#030612]"
-                    } hover:underline underline-offset-4 hover:text-red-600"`}
-                  >
-                    Logout
-                  </Link>
+                  <Logout />
                 </div>
               )}
             </div>

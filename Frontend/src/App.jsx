@@ -15,8 +15,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: 
-      <Layout />,
+      element: <Layout />,
       children: [
         {
           path: "",
@@ -25,12 +24,10 @@ function App() {
         {
           path: "/Blog-page",
           element: (
-            <div>
-              <PrivateRoute>
-                <BlogPage />
-                <WriteBlogSection />
-              </PrivateRoute>
-            </div>
+            <PrivateRoute>
+              <BlogPage />
+              <WriteBlogSection />
+            </PrivateRoute>
           ),
         },
       ],
