@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors({
     origin: "https://blog-frontend-h6p1.onrender.com",
     credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
